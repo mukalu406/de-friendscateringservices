@@ -1,0 +1,2448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Friends Catering Services - Professional Catering in Jinja City, Bugembe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --primary-dark: #E55A2B;
+            --secondary: #2D3047;
+            --accent: #FFD166;
+            --light: #F9FAFB;
+            --dark: #1A1A2E;
+            --dark-text: #333333;  /* Improved dark text color */
+            --gray: #666666;       /* Improved gray color */
+            --light-gray: #E5E7EB;
+            --success: #10B981;
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 25px rgba(0,0,0,0.08);
+            --shadow-hover: 0 20px 40px rgba(0,0,0,0.15);
+            --radius: 16px;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            color: var(--dark-text);  /* Improved text color */
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover:before {
+            left: 0;
+        }
+
+        .btn:hover {
+            color: white;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--secondary) 0%, #3A3F5C 100%);
+            box-shadow: 0 8px 20px rgba(45, 48, 71, 0.3);
+        }
+
+        .btn-secondary:before {
+            background: linear-gradient(135deg, #1A1D2E 0%, var(--secondary) 100%);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+
+        .btn-outline:before {
+            background: var(--gradient);
+        }
+
+        .btn-outline:hover {
+            color: white;
+            border-color: transparent;
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:before {
+            background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+
+        .btn-call {
+            background: linear-gradient(135deg, #34B7F1 0%, #0A8BC2 100%);
+            box-shadow: 0 8px 20px rgba(52, 183, 241, 0.3);
+        }
+
+        .btn-call:before {
+            background: linear-gradient(135deg, #0A8BC2 0%, #34B7F1 100%);
+        }
+
+        section {
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title h2 {
+            font-size: 3.2rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: var(--gradient);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 25px auto 0;
+            color: var(--gray);
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Video Background Containers */
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            opacity: 0.15;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 46, 0.7);
+            z-index: 2;
+        }
+
+        .content-overlay {
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Improved text visibility */
+        .text-white {
+            color: white !important;
+        }
+
+        .text-dark {
+            color: var(--dark-text) !important;  /* Improved dark text */
+        }
+
+        .text-primary {
+            color: var(--primary) !important;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 5px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--gradient);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        .logo-icon {
+            position: relative;
+            z-index: 2;
+            color: white;
+            font-size: 36px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text h1 {
+            font-size: 2rem;
+            margin: 0;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+        }
+
+        .logo-text p {
+            font-size: 1rem;
+            color: var(--primary);
+            margin: 5px 0 0;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            font-size: 1rem;
+            padding: 8px 0;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--gradient);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .mobile-toggle:hover {
+            transform: rotate(90deg);
+        }
+
+        /* Hero Section with Video Background */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(45, 48, 71, 0.9));
+            color: white;
+            padding: 200px 0 150px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero .video-background {
+            z-index: 1;
+        }
+
+        .hero .video-bg {
+            opacity: 0.25;
+        }
+
+        .hero .overlay {
+            background: linear-gradient(rgba(26, 26, 46, 0.7), rgba(45, 48, 71, 0.85));
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 4;
+        }
+
+        .hero h2 {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin: 0 auto 60px;
+            opacity: 0.9;
+            max-width: 800px;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        /* Chef Video Section */
+        .chef-video-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--light) 0%, #fff 100%);
+        }
+
+        .chef-video-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .chef-video-wrapper {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: var(--transition);
+        }
+
+        .chef-video-wrapper:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .chef-video {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 46, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .video-overlay i {
+            background: rgba(255, 107, 53, 0.8);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Features Section with Video Background */
+        .features {
+            background: var(--secondary);
+            position: relative;
+            color: white;
+        }
+
+        .features .section-title h2 {
+            background: linear-gradient(to right, white, var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .features .section-title p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .features .video-bg {
+            opacity: 0.1;
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 50px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .feature-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 30px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 36px;
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: rotateY(360deg) scale(1.1);
+        }
+
+        .feature-card h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* About Section with Video Background */
+        .about-section {
+            position: relative;
+            background: var(--light);
+        }
+
+        .about-section .video-bg {
+            opacity: 0.05;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .about-text p {
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            color: var(--dark-text);  /* Improved dark text */
+            line-height: 1.8;
+        }
+
+        .about-features {
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .feature-item-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-right: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover .feature-item-icon {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        .feature-item-text h4 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+            font-size: 1.3rem;
+        }
+
+        .feature-item-text p {
+            margin: 0;
+            color: var(--gray);  /* Improved gray color */
+            font-size: 1rem;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-hover);
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: var(--gradient);
+            color: white;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.4);
+            z-index: 2;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .experience-badge span:first-child {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .experience-badge span:last-child {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+
+        /* Services Section with Video Background */
+        .services-section {
+            position: relative;
+            background: linear-gradient(135deg, var(--light) 0%, #fff 100%);
+        }
+
+        .services-section .video-bg {
+            opacity: 0.05;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .service-card:hover:before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 40px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-content h3 {
+            color: var(--secondary);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        .service-content p {
+            margin-bottom: 30px;
+            color: var(--gray);  /* Improved gray color */
+            flex-grow: 1;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .service-features li {
+            margin-bottom: 12px;
+            color: var(--dark-text);  /* Improved dark text */
+            display: flex;
+            align-items: flex-start;
+            font-size: 1rem;
+        }
+
+        .service-features li i {
+            color: var(--primary);
+            margin-right: 12px;
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+
+        /* Gallery Section with Video Background */
+        .gallery-section {
+            background: var(--secondary);
+            position: relative;
+        }
+
+        .gallery-section .section-title h2 {
+            color: white;
+            background: linear-gradient(to right, white, var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .gallery-section .section-title p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .gallery-section .video-bg {
+            opacity: 0.07;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .gallery-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            height: 300px;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(26, 26, 46, 0.9), transparent);
+            color: white;
+            padding: 30px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            transform: translateY(0);
+        }
+
+        /* Testimonials Section with Video Background */
+        .testimonials-section {
+            position: relative;
+            background: var(--light);
+        }
+
+        .testimonials-section .video-bg {
+            opacity: 0.06;
+        }
+
+        .testimonials-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 3;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-slide {
+            background: white;
+            border-radius: var(--radius);
+            padding: 60px;
+            box-shadow: var(--shadow-hover);
+            text-align: center;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: var(--transition);
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .testimonial-slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--dark-text);  /* Improved dark text */
+            margin-bottom: 40px;
+            line-height: 1.9;
+            position: relative;
+        }
+
+        .testimonial-text:before,
+        .testimonial-text:after {
+            content: '"';
+            color: var(--primary);
+            font-size: 4rem;
+            font-family: serif;
+            position: absolute;
+            opacity: 0.3;
+        }
+
+        .testimonial-text:before {
+            top: -20px;
+            left: -30px;
+        }
+
+        .testimonial-text:after {
+            bottom: -40px;
+            right: -30px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .author-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--primary);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 8px;
+            color: var(--secondary);
+            font-size: 1.3rem;
+        }
+
+        .author-info p {
+            color: var(--primary);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .testimonial-controls button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-controls button:hover {
+            background: var(--gradient);
+            color: white;
+            border-color: transparent;
+            transform: scale(1.1);
+        }
+
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-dot.active {
+            background: var(--primary);
+            transform: scale(1.3);
+        }
+
+        /* Contact Section with Video Background */
+        .contact-section {
+            position: relative;
+            background: linear-gradient(135deg, var(--light) 0%, #fff 100%);
+        }
+
+        .contact-section .video-bg {
+            opacity: 0.04;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+            position: relative;
+            z-index: 3;
+        }
+
+        .contact-info h3 {
+            color: var(--secondary);
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .contact-details {
+            margin-bottom: 50px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .contact-detail:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .contact-detail-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-right: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .contact-detail-text h4 {
+            margin-bottom: 8px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        .contact-detail-text p {
+            color: var(--gray);  /* Improved gray color */
+            line-height: 1.7;
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .contact-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            background: var(--gradient);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.3rem;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .contact-social a:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .contact-social a:nth-child(2) {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        }
+
+        .contact-social a:nth-child(3) {
+            background: linear-gradient(135deg, #34B7F1 0%, #0A8BC2 100%);
+        }
+
+        .contact-social a:nth-child(4) {
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+        }
+
+        .contact-social a:nth-child(5) {
+            background: linear-gradient(135deg, #FF0050 0%, #FF0066 100%);
+        }
+
+        .contact-social a:nth-child(5):after {
+            content: '@user8367775311800';
+            position: absolute;
+            bottom: -35px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .contact-social a:nth-child(5):hover:after {
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 50px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-hover);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 12px;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid var(--light-gray);
+            border-radius: 12px;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            font-family: 'Open Sans', sans-serif;
+            background: #f8f9fa;
+            color: var(--dark-text);  /* Improved text color */
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            background: white;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        /* WhatsApp Quote Button Styling */
+        .whatsapp-quote-btn {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            margin-top: 20px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-quote-btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-quote-btn i {
+            font-size: 1.3rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 100px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-column h3 {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+            border-radius: 3px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 10px;
+        }
+
+        .footer-links a i {
+            font-size: 0.9rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.7;
+        }
+
+        .footer-contact i {
+            color: var(--accent);
+            margin-right: 15px;
+            width: 20px;
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .footer-logo .logo {
+            width: 70px;
+            height: 70px;
+        }
+
+        .footer-logo-text h3 {
+            color: white;
+            margin: 0;
+            padding: 0;
+            font-size: 1.6rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .footer-logo-text h3:after {
+            display: none;
+        }
+
+        .footer-logo-text p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            margin: 8px 0 0;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .footer-social a:nth-child(5):after {
+            content: '@user8367775311800';
+            position: absolute;
+            bottom: -35px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .footer-social a:nth-child(5):hover:after {
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 1s ease both;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .chef-video-container {
+                gap: 40px;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-content, .contact-container, .chef-video-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .services-container {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            
+            .hero h2 {
+                font-size: 3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px 0;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 100px 0;
+                box-shadow: none;
+                transition: var(--transition);
+                z-index: 999;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+
+            .nav-links li:last-child {
+                border-bottom: none;
+                padding-top: 40px;
+            }
+
+            .hero {
+                padding: 150px 0 100px;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .features-container, .services-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .chef-video {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero, .section {
+                padding: 100px 0;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.6rem;
+            }
+            
+            .experience-badge {
+                width: 140px;
+                height: 140px;
+                right: -20px;
+                bottom: -20px;
+            }
+            
+            .experience-badge span:first-child {
+                font-size: 2.5rem;
+            }
+            
+            .contact-form {
+                padding: 30px;
+            }
+            
+            .contact-detail {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-detail-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .video-bg {
+                display: none;
+            }
+            
+            .contact-social a:nth-child(5):after,
+            .footer-social a:nth-child(5):after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-utensils logo-icon"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>De Friends Catering</h1>
+                    <p>Bugembe, Jinja City</p>
+                </div>
+            </div>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:+256755399682" class="btn btn-call"><i class="fas fa-phone-alt"></i> Order Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section with Video Background -->
+    <section class="hero" id="home">
+        <div class="video-background">
+            <video class="video-bg" autoplay muted loop playsinline>
+                <source src="vd8.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content content-overlay">
+                <h2 class="text-white">Exquisite Catering Services in Jinja City</h2>
+                <p class="text-white" style="opacity: 0.95;">De Friends Catering Services brings you the finest culinary experience for weddings, corporate events, parties, and special occasions in Jinja City and beyond. Where flavor meets perfection.</p>
+                <div class="hero-btns">
+                    <a href="tel:+256755399682" class="btn btn-call"><i class="fas fa-phone-alt"></i> Call to Order</a>
+                    <a href="https://wa.me/256755399682?text=Hello%20De%20Friends%20Catering%2C%20I%20would%20like%20to%20inquire%20about%20your%20services" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="#services" class="btn btn-outline">Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef Video Section -->
+    <section class="chef-video-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Chefs in Action</h2>
+                <p>Watch our talented chefs create culinary masterpieces with passion and expertise</p>
+            </div>
+            <div class="chef-video-container">
+                <div class="chef-video-wrapper">
+                    <video class="chef-video" autoplay muted loop playsinline>
+                        <source src="VD8.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: var(--secondary); font-size: 2.2rem; margin-bottom: 25px;">Culinary Excellence</h3>
+                    <p style="margin-bottom: 30px; font-size: 1.2rem; color: var(--dark-text); line-height: 1.8;">Our chefs combine traditional Ugandan recipes with modern culinary techniques to create unforgettable dining experiences. Every dish is prepared with fresh, locally-sourced ingredients and served with passion.</p>
+                    
+                    <div class="feature-item">
+                        <div class="feature-item-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="feature-item-text">
+                            <h4>Fresh Ingredients</h4>
+                            <p>We source the finest local ingredients daily from Jinja markets</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-item-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="feature-item-text">
+                            <h4>Expert Chefs</h4>
+                            <p>Our team has 5+ years of experience in professional catering</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-item-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="feature-item-text">
+                            <h4>Passion & Care</h4>
+                            <p>Every dish is prepared with love and attention to detail</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section with Video Background -->
+    <section class="features" id="features">
+        <div class="video-background">
+            <video class="video-bg" autoplay muted loop playsinline>
+                <source src="VD8.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+        </div>
+        <div class="container">
+            <div class="section-title content-overlay">
+                <h2>Why Choose Us</h2>
+                <p>Discover what sets De Friends Catering apart from the rest</p>
+            </div>
+            <div class="features-container content-overlay">
+                <div class="feature-card animate">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="text-white">Premium Quality</h3>
+                    <p class="text-white" style="opacity: 0.9;">We use only the finest ingredients to create delicious, memorable meals for your special occasions.</p>
+                </div>
+                <div class="feature-card animate" style="animation-delay: 0.2s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-white">Experienced Team</h3>
+                    <p class="text-white" style="opacity: 0.9;">Our professional chefs and staff have years of experience in catering for events of all sizes.</p>
+                </div>
+                <div class="feature-card animate" style="animation-delay: 0.4s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="text-white">On-Time Delivery</h3>
+                    <p class="text-white" style="opacity: 0.9;">We guarantee timely delivery and setup for your events, ensuring everything is perfect.</p>
+                </div>
+                <div class="feature-card animate" style="animation-delay: 0.6s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="text-white">Customized Menus</h3>
+                    <p class="text-white" style="opacity: 0.9;">We work with you to create personalized menus that match your taste, theme, and budget.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Video Background -->
+    <section class="section about-section" id="about">
+        <div class="video-background">
+            <video class="video-bg" autoplay muted loop playsinline>
+                <source src="VD8.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+        </div>
+        <div class="container">
+            <div class="section-title content-overlay">
+                <h2>About De Friends Catering</h2>
+                <p>Based in Bugembe, Jinja City, we are passionate about creating unforgettable culinary experiences for all your special events.</p>
+            </div>
+            <div class="about-content content-overlay">
+                <div class="about-text">
+                    <p class="text-dark">Founded with a passion for exceptional food and service, De Friends Catering has become a trusted name for events throughout Jinja City and beyond. We specialize in creating memorable dining experiences for weddings, corporate events, birthdays, and all special occasions.</p>
+                    
+                    <p class="text-dark">Our team combines traditional Ugandan flavors with modern culinary techniques to deliver dishes that delight the senses. From local specialties to international cuisine, we craft menus that reflect your unique taste and vision.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-item-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="feature-item-text">
+                                <h4>Fresh Local Ingredients</h4>
+                                <p>We source the freshest local ingredients to ensure the highest quality in every dish.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-item-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="feature-item-text">
+                                <h4>Hygiene & Safety</h4>
+                                <p>We maintain the highest standards of food safety and hygiene in all our operations.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-item-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="feature-item-text">
+                                <h4>Affordable Excellence</h4>
+                                <p>Premium quality catering services at competitive prices tailored to your budget.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-btns" style="justify-content: flex-start; margin-top: 40px;">
+                        <a href="#contact" class="btn">Get a Quote</a>
+                        <a href="tel:+256755399682" class="btn btn-outline"><i class="fas fa-phone-alt"></i> Call Now</a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="De Friends Catering Team">
+                    <div class="experience-badge">
+                        <span>5+</span>
+                        <span>Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section with Video Background -->
+    <section class="section services-section" id="services">
+        <div class="video-background">
+            <video class="video-bg" autoplay muted loop playsinline>
+                <source src="VD8.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+        </div>
+        <div class="container">
+            <div class="section-title content-overlay">
+                <h2>Our Catering Services</h2>
+                <p>We offer a comprehensive range of catering services for all types of events and occasions.</p>
+            </div>
+            <div class="services-container content-overlay">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.Ttc3AsKg1wwqmxByqxKnmwHaEK?w=1000&h=563&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Wedding Catering">
+                    </div>
+                    <div class="service-content">
+                        <h3>Wedding Catering</h3>
+                        <p>Create the perfect wedding feast with our specialized wedding catering services. We handle everything from menu planning to on-site service.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Custom wedding menus</li>
+                            <li><i class="fas fa-check"></i> Cake & dessert tables</li>
+                            <li><i class="fas fa-check"></i> Beverage service</li>
+                            <li><i class="fas fa-check"></i> Elegant presentation</li>
+                        </ul>
+                        <a href="https://wa.me/256755399682?text=Hello%2C%20I'm%20interested%20in%20Wedding%20Catering%20services" class="btn" target="_blank">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://www.ugabox.com/images/business/directory/gardens/akamwesi-gardens/Akamwesi-Wedding-Gardens-Akamwesi-Shopping-Mall-Kampala-Uganda-10.jpg" alt="Corporate Catering">
+                    </div>
+                    <div class="service-content">
+                        <h3>Corporate Catering</h3>
+                        <p>Professional catering for business meetings, conferences, office parties, and corporate events of any size.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Business luncheons</li>
+                            <li><i class="fas fa-check"></i> Conference catering</li>
+                            <li><i class="fas fa-check"></i> Office parties</li>
+                            <li><i class="fas fa-check"></i> Professional setup</li>
+                        </ul>
+                        <a href="https://wa.me/256755399682?text=Hello%2C%20I'm%20interested%20in%20Corporate%20Catering%20services" class="btn" target="_blank">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="pic1.jpg" alt="Private Parties">
+                    </div>
+                    <div class="service-content">
+                        <h3>Private Parties</h3>
+                        <p>Birthdays, anniversaries, family gatherings, and special celebrations made memorable with our catering services.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Birthday parties</li>
+                            <li><i class="fas fa-check"></i> Anniversary celebrations</li>
+                            <li><i class="fas fa-check"></i> Family gatherings</li>
+                            <li><i class="fas fa-check"></i> Themed events</li>
+                        </ul>
+                        <a href="https://wa.me/256755399682?text=Hello%2C%20I'm%20interested%20in%20Private%20Party%20Catering" class="btn" target="_blank">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section with Video Background -->
+    <section class="section gallery-section" id="gallery">
+        <div class="video-background">
+            <video class="video-bg" autoplay muted loop playsinline>
+                <source src="VD8.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+        </div>
+        <div class="container">
+            <div class="section-title content-overlay">
+                <h2>Our Work Gallery</h2>
+                <p>Take a look at some of our recent catering events and delicious creations.</p>
+            </div>
+            <div class="gallery-container content-overlay">
+                <div class="gallery-item">
+                    <img src="pic1.jpg" alt="Wedding Buffet">
+                    <div class="gallery-item-overlay">
+                        <h4 class="text-white">Wedding Buffet Setup</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="pic2.jpg" alt="Corporate Event">
+                    <div class="gallery-item-overlay">
+                        <h4 class="text-white">Corporate Event Catering</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="pic3.jpg" alt="Gourmet Dishes">
+                    <div class="gallery-item-overlay">
+                        <h4 class="text-white">Gourmet Dish Presentation</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://merchandiseuganda.com/wp-content/uploads/2020/04/PHOTO-2020-04-16-19-10-59.jpg" alt="Dessert Table">
+                    <div class="gallery-item-overlay">
+                        <h4 class="text-white">Dessert & Cake Table</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section with Video Background -->
+    <section class="section testimonials-section">
+        <div class="video-background">
+            <video class="video-bg" autoplay muted loop playsinline>
+                <source src="VD8.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+        </div>
+        <div class="container">
+            <div class="section-title content-overlay">
+                <h2>What Our Clients Say</h2>
+                <p>Don't just take our word for it - hear from some of our satisfied customers.</p>
+            </div>
+            <div class="testimonials-container content-overlay">
+                <div class="testimonial-slider">
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-text">
+                            "De Friends Catering made our wedding day absolutely perfect! The food was delicious, the presentation was beautiful, and the service was exceptional. Our guests are still talking about it weeks later!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="pic3.jpg" alt="Sarah K.">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Kwagala.</h4>
+                                <p>Wedding Client, Jinja</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-text">
+                            "We've used De Friends Catering for three corporate events now, and they consistently deliver excellent service and delicious food. Their team is professional, punctual, and the pricing is very reasonable."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="pic2.jpg" alt="David M.">
+                            </div>
+                            <div class="author-info">
+                                <h4>David Mubeezi.</h4>
+                                <p>Corporate Client, Kampala</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-text">
+                            "The food for my daughter's birthday party was fantastic! The children loved the kid-friendly options, and the adults enjoyed the more sophisticated dishes. Thank you for making our celebration so special!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="pic1.jpg" alt="Grace N.">
+                            </div>
+                            <div class="author-info">
+                                <h4>Grace Nankya.</h4>
+                                <p>Birthday Party, Bugembe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button id="prevTestimonial"><i class="fas fa-chevron-left"></i></button>
+                    <button id="nextTestimonial"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="testimonial-dots">
+                    <span class="testimonial-dot active" data-slide="0"></span>
+                    <span class="testimonial-dot" data-slide="1"></span>
+                    <span class="testimonial-dot" data-slide="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Video Background -->
+    <section class="section contact-section" id="contact">
+        <div class="video-background">
+            <video class="video-bg" autoplay muted loop playsinline>
+                <source src="vd1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+        </div>
+        <div class="container">
+            <div class="section-title content-overlay">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for bookings, inquiries, or to discuss your catering needs.</p>
+            </div>
+            <div class="contact-container content-overlay">
+                <div class="contact-info">
+                    <h3>Get Your Event Catered</h3>
+                    <p style="margin-bottom: 30px; color: var(--dark-text); font-size: 1.1rem; opacity: 0.9;">Contact us today to discuss your catering needs. We serve Jinja City and surrounding areas with excellence.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-detail-text">
+                                <h4>Our Location</h4>
+                                <p>Bugembe, Jinja City<br>Uganda</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-detail-text">
+                                <h4>Phone Number</h4>
+                                <p>+256 755 399 682<br>Available 7:00 AM - 10:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-detail-text">
+                                <h4>Email Address</h4>
+                                <p>defriendscatering@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-detail-text">
+                                <h4>Working Hours</h4>
+                                <p>Monday - Saturday: 7:00 AM - 10:00 PM<br>Sunday: 8:00 AM - 8:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <a href="https://wa.me/256755399682" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="tel:+256755399682" title="Call"><i class="fas fa-phone-alt"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@user8367775311800" target="_blank" title="TikTok: @user8367775311800"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 style="color: var(--secondary); margin-bottom: 25px;">Request a Quote</h3>
+                    <form id="quoteForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" class="form-control" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="Your phone number" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Your email address">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventType">Event Type *</label>
+                            <select id="eventType" class="form-control" required>
+                                <option value="">Select event type</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="birthday">Birthday Party</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="family">Family Gathering</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="eventDate">Event Date *</label>
+                                <input type="date" id="eventDate" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">Number of Guests *</label>
+                                <select id="guests" class="form-control" required>
+                                    <option value="">Select number</option>
+                                    <option value="1-50">1-50</option>
+                                    <option value="51-100">51-100</option>
+                                    <option value="101-200">101-200</option>
+                                    <option value="201-500">201-500</option>
+                                    <option value="500+">500+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Details</label>
+                            <textarea id="message" class="form-control" placeholder="Tell us about your event, dietary requirements, or any special requests"></textarea>
+                        </div>
+                        
+                        <!-- WhatsApp Quote Button -->
+                        <button type="button" id="whatsappQuoteBtn" class="whatsapp-quote-btn">
+                            <i class="fab fa-whatsapp"></i> Send Quote Request via WhatsApp
+                        </button>
+                        
+                        <p style="text-align: center; margin-top: 15px; color: var(--gray); font-size: 0.9rem;">
+                            Your information will be sent directly to our chef via WhatsApp for immediate response
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <div class="logo">
+                            <i class="fas fa-utensils logo-icon"></i>
+                        </div>
+                        <div class="footer-logo-text">
+                            <h3>De Friends Catering</h3>
+                            <p>Bugembe, Jinja City</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 20px; color: rgba(255, 255, 255, 0.95);">Professional catering services for weddings, corporate events, parties, and all special occasions in Jinja City and beyond.</p>
+                    <div class="contact-actions" style="display: flex; gap: 15px; margin-top: 30px;">
+                        <a href="tel:+256755399682" class="btn btn-call" style="padding: 12px; font-size: 0.9rem;"><i class="fas fa-phone-alt"></i> Call Now</a>
+                        <a href="https://wa.me/256755399682" class="btn btn-whatsapp" style="padding: 12px; font-size: 0.9rem;" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Get a Quote</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services"><i class="fas fa-utensils"></i> Wedding Catering</a></li>
+                        <li><a href="#services"><i class="fas fa-briefcase"></i> Corporate Catering</a></li>
+                        <li><a href="#services"><i class="fas fa-birthday-cake"></i> Private Parties</a></li>
+                        <li><a href="#services"><i class="fas fa-calendar-alt"></i> Event Planning</a></li>
+                        <li><a href="#services"><i class="fas fa-clipboard-list"></i> Custom Menus</a></li>
+                        <li><a href="#services"><i class="fas fa-concierge-bell"></i> Full Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Bugembe, Jinja City, Uganda</p>
+                        <p><i class="fas fa-phone-alt"></i> +256 755 399 682</p>
+                        <p><i class="fas fa-envelope"></i> defriendscatering@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 7:00 AM - 10:00 PM</p>
+                        <p><i class="fas fa-clock"></i> Sun: 8:00 AM - 8:00 PM</p>
+                    </div>
+                    
+                    <div class="footer-social">
+                        <a href="https://wa.me/256755399682" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="tel:+256755399682" title="Call"><i class="fas fa-phone-alt"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@user8367775311800" target="_blank" title="TikTok: @user8367775311800"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 De Friends Catering Services. All rights reserved. | Serving Jinja City with excellence since 2018 | TikTok: @user8367775311800</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileToggle.querySelector('i').classList.toggle('fa-bars');
+            mobileToggle.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileToggle.querySelector('i').classList.add('fa-bars');
+                mobileToggle.querySelector('i').classList.remove('fa-times');
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Scroll animation for elements
+            document.querySelectorAll('.animate').forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        });
+        
+        // Testimonial slider
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        const prevBtn = document.getElementById('prevTestimonial');
+        const nextBtn = document.getElementById('nextTestimonial');
+        let currentSlide = 0;
+        let slideInterval;
+        
+        function showSlide(index) {
+            testimonialSlides.forEach(slide => slide.classList.remove('active'));
+            testimonialDots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonialSlides[index].classList.add('active');
+            testimonialDots[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            let nextIndex = currentSlide + 1;
+            if (nextIndex >= testimonialSlides.length) nextIndex = 0;
+            showSlide(nextIndex);
+        }
+        
+        function prevSlide() {
+            let prevIndex = currentSlide - 1;
+            if (prevIndex < 0) prevIndex = testimonialSlides.length - 1;
+            showSlide(prevIndex);
+        }
+        
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetInterval();
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetInterval();
+        });
+        
+        testimonialDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const slideIndex = parseInt(dot.getAttribute('data-slide'));
+                showSlide(slideIndex);
+                resetInterval();
+            });
+        });
+        
+        function startInterval() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+        
+        function resetInterval() {
+            clearInterval(slideInterval);
+            startInterval();
+        }
+        
+        startInterval();
+        
+        // WhatsApp Quote Button Functionality - FIXED VERSION
+        document.getElementById('whatsappQuoteBtn').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const eventType = document.getElementById('eventType').value;
+            const eventDate = document.getElementById('eventDate').value;
+            const guests = document.getElementById('guests').value;
+            const message = document.getElementById('message').value;
+            
+            // Validation
+            if(!name || !phone || !eventType || !eventDate || !guests) {
+                alert('Please fill in all required fields (marked with *).');
+                return;
+            }
+            
+            // Format date
+            const formattedDate = new Date(eventDate).toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            // Create WhatsApp message - SIMPLIFIED VERSION
+            const whatsappMessage = `*NEW CATERING QUOTE REQUEST*%0A%0A*Customer Details:*%0A👤 Name: ${name}%0A📱 Phone: ${phone}%0A📧 Email: ${email || 'Not provided'}%0A%0A*Event Details:*%0A🎉 Event Type: ${eventType}%0A📅 Event Date: ${formattedDate}%0A👥 Number of Guests: ${guests}%0A%0A*Additional Details:*%0A${message || 'No additional details provided'}%0A%0A*--- End of Quote Request ---*%0A*Please respond to this quote request within 24 hours.*`;
+            
+            // Open WhatsApp - CORRECT FORMAT
+            const whatsappUrl = `https://wa.me/256755399682?text=${whatsappMessage}`;
+            
+            // Show confirmation
+            const confirmation = confirm(`Ready to send your quote request to De Friends Catering?\n\nName: ${name}\nPhone: ${phone}\nEvent: ${eventType}\nDate: ${formattedDate}\nGuests: ${guests}\n\nClick OK to open WhatsApp and send your request.`);
+            
+            if (confirmation) {
+                // Open WhatsApp in new tab
+                window.open(whatsappUrl, '_blank');
+                
+                // Clear form after successful submission
+                setTimeout(() => {
+                    document.getElementById('quoteForm').reset();
+                    alert('Thank you! Your quote request has been sent to our chef via WhatsApp. We will contact you shortly.');
+                }, 1000);
+            }
+        });
+        
+        // Alternative method using form submit
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const eventType = document.getElementById('eventType').value;
+            const eventDate = document.getElementById('eventDate').value;
+            const guests = document.getElementById('guests').value;
+            const message = document.getElementById('message').value;
+            
+            // Validation
+            if(!name || !phone || !eventType || !eventDate || !guests) {
+                alert('Please fill in all required fields (marked with *).');
+                return;
+            }
+            
+            // Format date
+            const formattedDate = new Date(eventDate).toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            // Create WhatsApp message
+            const whatsappMessage = `*NEW CATERING QUOTE REQUEST*%0A%0A*Customer Details:*%0A👤 Name: ${name}%0A📱 Phone: ${phone}%0A📧 Email: ${email || 'Not provided'}%0A%0A*Event Details:*%0A🎉 Event Type: ${eventType}%0A📅 Event Date: ${formattedDate}%0A👥 Number of Guests: ${guests}%0A%0A*Additional Details:*%0A${message || 'No additional details provided'}%0A%0A*--- End of Quote Request ---*%0A*Please respond to this quote request within 24 hours.*`;
+            
+            // Open WhatsApp
+            window.open(`https://wa.me/256755399682?text=${whatsappMessage}`, '_blank');
+            
+            // Clear form
+            this.reset();
+            alert('Thank you! Your quote request has been sent to our chef via WhatsApp. We will contact you shortly.');
+        });
+        
+        // Set minimum date for event date (today)
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('eventDate').min = today;
+        
+        // Initialize animations on load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Trigger scroll event to check initial animations
+            window.dispatchEvent(new Event('scroll'));
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // Confirmation for external links
+        document.querySelectorAll('a[href^="tel:"], a[href^="https://wa.me"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if(this.getAttribute('href').includes('tel:')) {
+                    if(!confirm('Do you want to call De Friends Catering?')) {
+                        e.preventDefault();
+                    }
+                } else if(this.getAttribute('href').includes('wa.me')) {
+                    if(!confirm('Do you want to open WhatsApp to contact De Friends Catering?')) {
+                        e.preventDefault();
+                    }
+                }
+            });
+        });
+        
+        // TikTok username tooltip enhancement
+        document.querySelectorAll('a[href*="tiktok"]').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.setAttribute('title', 'TikTok: @user8367775311800');
+            });
+        });
+    </script>
+</body>
+</html>
